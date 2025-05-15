@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	replCmds "github.com/devnchill/pokeDex/replcommands"
+	"github.com/devnchill/pokeDex/replcommands"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 		input := scanner.Text()
 		parsedInput := cleanInput(input)
 		cmdName := parsedInput[0]
-		if cmd, exists := replCmds.Commands[cmdName]; exists {
+		if cmd, exists := replcommands.Commands[cmdName]; exists {
 			cmd.Callback()
 		} else {
 			fmt.Println("Invalid command. Type 'help' for a list of commands.")

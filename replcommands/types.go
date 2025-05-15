@@ -1,4 +1,4 @@
-package commands
+package replcommands
 
 type cliCommand struct {
 	Name        string
