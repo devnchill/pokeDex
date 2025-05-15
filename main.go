@@ -18,7 +18,9 @@ func main() {
 		parsedInput := cleanInput(input)
 		cmdName := parsedInput[0]
 		if cmd, exists := replcommands.Commands[cmdName]; exists {
-			cmd.Callback()
+			if err := cmd.Callback(); err != nil {
+				fmt.Printf("Error: %v\n", err)
+			}
 		} else {
 			fmt.Println("Invalid command. Type 'help' for a list of commands.")
 		}
